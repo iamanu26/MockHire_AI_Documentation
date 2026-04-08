@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MockHire AI — Interview Preparation Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="noise-overlay"></div>
+
+  <!-- NAV — no brackets -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-text">MockHire<span class="logo-ai">AI</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#objective" class="nav-link">Objective</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#flow" class="nav-link">Flow</a></li>
+        <li><a href="#stack" class="nav-link">Stack</a></li>
+        <li><a href="#challenges" class="nav-link">Engineering</a></li>
+      </ul>
+      <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">Build by Anurag Dubey</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO — fixed two-column layout -->
+  <section class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-scan-line"></div>
+
+    <div class="hero-content">
+      <!-- LEFT COLUMN -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-icon">◈</span>
+          <span>AI POWERED PLATFORM</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-title-line">Mock<span class="accent-cyan">Hire</span></span>
+          <span class="hero-title-sub">AI</span>
+        </h1>
+        <p class="hero-desc">
+          Voice-driven mock interview simulation powered by LLaMA 3.1.<br/>
+          Speak. Be heard. Get scored. Improve.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num accent-cyan">4</div>
+            <div class="stat-label">Core Modules</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-num accent-purple">5</div>
+            <div class="stat-label">Score Metrics</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-num accent-green">∞</div>
+            <div class="stat-label">AI Questions</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-num accent-orange">3</div>
+            <div class="stat-label">DSA Levels</div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#objective" class="btn-primary">Explore Platform</a>
+          <a href="#architecture" class="btn-ghost">View Architecture</a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Terminal -->
+      <div class="hero-terminal">
+        <div class="terminal-bar">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="t-title">mockhire_session.log</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">mockhire start --mode=technical</span></div>
+          <div class="t-line t-out"><span>✓ Session initialized. Agent loaded.</span></div>
+          <div class="t-line t-out"><span>✓ Speech synthesis: <span class="accent-cyan">ACTIVE</span></span></div>
+          <div class="t-line t-out"><span>✓ Speech recognition: <span class="accent-cyan">LISTENING</span></span></div>
+          <div class="t-line"><span class="t-prompt">AI</span> <span class="t-ai-text">"Tell me about your experience with distributed systems..."</span></div>
+          <div class="t-line t-user"><span class="t-prompt">YOU</span> <span class="t-speaking">▶ Speaking...</span></div>
+          <div class="t-line t-out"><span>⟳ Processing response via LLaMA 3.1 (Groq)</span></div>
+          <div class="t-line"><span class="t-prompt">AI</span> <span class="t-ai-text">"Interesting. How would you handle consistency in that scenario?"</span></div>
+          <div class="t-line t-score"><span>Session ended. Generating feedback report...</span></div>
+          <div class="t-line t-score"><span>Communication: <span class="score-bar" data-score="82" style="color:var(--cyan)">8</span>/10</span></div>
+          <div class="t-line t-score"><span>Technical:&nbsp;&nbsp;&nbsp;&nbsp; <span class="score-bar" data-score="76" style="color:var(--cyan)">7</span>/10</span></div>
+          <div class="t-line t-score"><span>Confidence:&nbsp;&nbsp; <span class="score-bar" data-score="88" style="color:var(--green)">8</span>/10</span></div>
+          <div class="t-cursor">_</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVE -->
+  <section class="section" id="objective">
+    <div class="container">
+      <div class="section-label">01 — OBJECTIVE</div>
+      <h2 class="section-title">Why MockHire AI Exists</h2>
+      <p class="section-sub">Most platforms give you text-based Q&amp;A. We give you an actual interviewer.</p>
+
+      <div class="problem-grid">
+        <div class="problem-card" data-delay="0">
+          <div class="problem-icon" style="--clr: var(--red)">✗</div>
+          <h3>No Realistic Practice</h3>
+          <p>Text-based tools can't simulate the pressure of speaking answers aloud in real time under interview conditions.</p>
+        </div>
+        <div class="problem-card" data-delay="100">
+          <div class="problem-icon" style="--clr: var(--orange)">⊘</div>
+          <h3>No Measurable Feedback</h3>
+          <p>Generic tips don't tell you where you actually failed. Candidates need scores on real dimensions from real answers.</p>
+        </div>
+        <div class="problem-card" data-delay="200">
+          <div class="problem-icon" style="--clr: var(--purple)">⊞</div>
+          <h3>Disconnected DSA Prep</h3>
+          <p>Coding practice and interview simulation live on separate platforms. MockHire unifies them into one workflow.</p>
+        </div>
+        <div class="problem-card" data-delay="300">
+          <div class="problem-icon" style="--clr: var(--green)">⟳</div>
+          <h3>Static Question Banks</h3>
+          <p>Memorizable lists don't prepare you for real interviewers. You need AI-generated, conversation-aware follow-ups.</p>
+        </div>
+      </div>
+
+      <div class="mission-block">
+        <div class="mission-label">◈ MISSION STATEMENT</div>
+        <p class="mission-text">
+          To create a comprehensive, AI-driven platform that simulates real interview conditions —
+          enabling candidates to practice speaking answers aloud, receive intelligent follow-up questions,
+          and get scored, actionable feedback. All in one place.
+        </p>
+      </div>
+
+      <div class="objectives-list">
+        <div class="obj-item" data-delay="0">
+          <div class="obj-num">01</div>
+          <div class="obj-content">
+            <h4>Simulate Real Interviews</h4>
+            <p>Voice input, speech synthesis, and dynamic AI follow-up questions powered by LLaMA 3.1 via Groq.</p>
+          </div>
+        </div>
+        <div class="obj-item" data-delay="80">
+          <div class="obj-num">02</div>
+          <div class="obj-content">
+            <h4>Voice-First Interaction</h4>
+            <p>Speak answers naturally via Web Speech API. Build confidence under realistic pressure.</p>
+          </div>
+        </div>
+        <div class="obj-item" data-delay="160">
+          <div class="obj-num">03</div>
+          <div class="obj-content">
+            <h4>AI-Scored Performance Reports</h4>
+            <p>Auto-generate scorecards across Communication, Confidence, Technical Skills, Grammar, and Overall.</p>
+          </div>
+        </div>
+        <div class="obj-item" data-delay="240">
+          <div class="obj-num">04</div>
+          <div class="obj-content">
+            <h4>Integrated DSA Practice</h4>
+            <p>LeetCode-style coding with AI-generated Easy/Medium/Hard problems, reviewed for correctness and complexity.</p>
+          </div>
+        </div>
+        <div class="obj-item" data-delay="320">
+          <div class="obj-num">05</div>
+          <div class="obj-content">
+            <h4>Secure Personalized History</h4>
+            <p>JWT authentication and per-user interview records. Track progress across sessions over time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section section-dark" id="features">
+    <div class="container">
+      <div class="section-label">02 — FEATURES</div>
+      <h2 class="section-title">Four Core Modules</h2>
+      <p class="section-sub">Each module designed to solve a specific gap in how candidates prepare.</p>
+
+      <div class="features-grid">
+        <div class="feature-card feature-large" data-delay="0">
+          <div class="feature-num">01</div>
+          <div class="feature-icon-wrap" style="--clr: var(--cyan)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 20a6 6 0 1 0 12 0 6 6 0 0 0-12 0" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M20 8v4M20 28v4M8 20h4M28 20h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Voice Interview Simulation</h3>
+          <p>AI asks questions aloud via speech synthesis. You answer verbally. The browser's Web Speech API captures every word and sends it to LLaMA 3.1 for intelligent follow-up generation.</p>
+          <ul class="feature-list">
+            <li>Technical &amp; HR interview modes</li>
+            <li>Conversation-aware follow-ups</li>
+            <li>Session isolation per interview</li>
+            <li>Real-time voice capture</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-delay="100">
+          <div class="feature-num">02</div>
+          <div class="feature-icon-wrap" style="--clr: var(--purple)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="8" width="28" height="24" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 16h8M12 20h12M12 24h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="28" cy="16" r="4" fill="currentColor" opacity="0.3"/>
+              <path d="M26 16l1.5 1.5L30 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>AI Feedback Report</h3>
+          <p>After ending a session, get a detailed performance scorecard generated directly from your conversation history.</p>
+          <ul class="feature-list">
+            <li>Communication score</li>
+            <li>Confidence &amp; Grammar</li>
+            <li>Technical depth score</li>
+            <li>Strengths &amp; weaknesses summary</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-delay="200">
+          <div class="feature-num">03</div>
+          <div class="feature-icon-wrap" style="--clr: var(--green)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="4" y="10" width="32" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 18l-4 4 4 4M26 18l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 16l-4 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>DSA Practice Module</h3>
+          <p>LeetCode-style coding environment with AI-generated problems and expert review of your solutions.</p>
+          <ul class="feature-list">
+            <li>Easy / Medium / Hard problems</li>
+            <li>Python, C++, Java, JavaScript</li>
+            <li>Time &amp; space complexity review</li>
+            <li>Score out of 10 per submission</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" data-delay="300">
+          <div class="feature-num">04</div>
+          <div class="feature-icon-wrap" style="--clr: var(--orange)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 6a7 7 0 1 1 0 14 7 7 0 0 1 0-14z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M6 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>User Auth &amp; History</h3>
+          <p>JWT-based authentication keeps your interview records private and persistent. Track improvement over time.</p>
+          <ul class="feature-list">
+            <li>JWT login &amp; registration</li>
+            <li>Per-user session history</li>
+            <li>Persistent score records</li>
+            <li>Secure endpoint protection</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section class="section" id="architecture">
+    <div class="container container-wide">
+      <div class="section-label">03 — ARCHITECTURE</div>
+      <h2 class="section-title">System Architecture</h2>
+      <p class="section-sub">How the components connect — from user voice to AI response to database persistence.</p>
+
+      <div class="arch-diagram-wrap">
+        <svg class="arch-svg" viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" id="arch-svg">
+          <defs>
+            <marker id="arrow-cyan" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#00D4FF"/>
+            </marker>
+            <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#7C3AED"/>
+            </marker>
+            <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#10B981"/>
+            </marker>
+            <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
+            </marker>
+
+            <!-- Glows -->
+            <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-green" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-orange" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+
+            <!-- Grid pattern -->
+            <pattern id="arch-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#111827" stroke-width="0.6"/>
+            </pattern>
+
+            <!-- Layer gradient fills -->
+            <linearGradient id="grad-cyan" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#00D4FF" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="grad-purple" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="grad-green" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#10B981" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#10B981" stop-opacity="0.04"/>
+            </linearGradient>
+            <linearGradient id="grad-orange" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.04"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Background grid -->
+          <rect width="960" height="580" fill="url(#arch-grid)" opacity="0.6"/>
+
+          <!-- ═══ LAYER 1: FRONTEND ═══ -->
+          <rect x="16" y="16" width="928" height="108" rx="8" fill="url(#grad-cyan)" stroke="#00D4FF" stroke-width="1" stroke-opacity="0.3"/>
+          <!-- Left accent bar -->
+          <rect x="16" y="16" width="5" height="108" rx="3" fill="#00D4FF" filter="url(#glow-cyan)"/>
+          <!-- Layer badge -->
+          <rect x="28" y="24" width="190" height="40" rx="6" fill="#00D4FF" fill-opacity="0.08" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3"/>
+          <text x="38" y="40" font-family="Space Mono, monospace" font-size="8" fill="#00D4FF" letter-spacing="2.5" font-weight="700">LAYER 1 — FRONTEND</text>
+          <text x="38" y="55" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">React.js + Vite</text>
+
+          <!-- Frontend boxes -->
+          <g class="arch-box">
+            <rect x="232" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="232" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="311" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Interface</text>
+            <text x="311" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">React Components</text>
+            <text x="311" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">+ React Router</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="406" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="406" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="485" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Voice I/O</text>
+            <text x="485" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Web Speech API</text>
+            <text x="485" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">SpeechSynthesis</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="580" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="580" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="659" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Code Editor</text>
+            <text x="659" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Browser-based IDE</text>
+            <text x="659" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Multi-language</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="754" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="754" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="833" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Auth Forms</text>
+            <text x="833" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Login / Register</text>
+            <text x="833" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JWT Token Store</text>
+          </g>
+
+          <!-- Connector label -->
+          <rect x="380" y="128" width="200" height="20" rx="4" fill="#060A14"/>
+          <text x="480" y="141" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#00D4FF" letter-spacing="1.5" font-weight="700">HTTP / REST API CALLS</text>
+
+          <!-- Arrows down to API layer -->
+          <line x1="311" y1="112" x2="311" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="485" y1="112" x2="485" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="659" y1="112" x2="659" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="833" y1="112" x2="833" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+
+          <!-- ═══ LAYER 2: BACKEND API ═══ -->
+          <rect x="16" y="158" width="928" height="108" rx="8" fill="url(#grad-purple)" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.3"/>
+          <rect x="16" y="158" width="5" height="108" rx="3" fill="#7C3AED" filter="url(#glow-purple)"/>
+          <rect x="28" y="166" width="190" height="40" rx="6" fill="#7C3AED" fill-opacity="0.08" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.3"/>
+          <text x="38" y="182" font-family="Space Mono, monospace" font-size="8" fill="#7C3AED" letter-spacing="2.5" font-weight="700">LAYER 2 — BACKEND API</text>
+          <text x="38" y="197" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">FastAPI (Python)</text>
+
+          <g class="arch-box">
+            <rect x="232" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="232" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="311" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/auth/*</text>
+            <text x="311" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">register / login</text>
+            <text x="311" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JWT issue / verify</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="406" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="406" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="485" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/interview/*</text>
+            <text x="485" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">start / answer</text>
+            <text x="485" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">end / history</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="580" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="580" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="659" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/dsa/*</text>
+            <text x="659" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">generate / submit</text>
+            <text x="659" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">evaluate / score</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="754" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="754" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="833" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/feedback/*</text>
+            <text x="833" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">generate report</text>
+            <text x="833" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">score / summary</text>
+          </g>
+
+          <!-- JWT Badge -->
+          <rect x="920" y="180" width="0" height="0"/>
+          <!-- (JWT shown inline via the /auth box) -->
+
+          <!-- Groq label -->
+          <rect x="356" y="270" width="248" height="20" rx="4" fill="#060A14"/>
+          <text x="480" y="283" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#7C3AED" letter-spacing="1.5" font-weight="700">GROQ API CALLS (LLaMA 3.1)</text>
+
+          <!-- Arrows to AI -->
+          <line x1="311" y1="254" x2="311" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="485" y1="254" x2="485" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="659" y1="254" x2="659" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="833" y1="254" x2="833" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+
+          <!-- ═══ LAYER 3: AI ENGINE ═══ -->
+          <rect x="16" y="302" width="928" height="108" rx="8" fill="url(#grad-green)" stroke="#10B981" stroke-width="1" stroke-opacity="0.3"/>
+          <rect x="16" y="302" width="5" height="108" rx="3" fill="#10B981" filter="url(#glow-green)"/>
+          <rect x="28" y="310" width="190" height="40" rx="6" fill="#10B981" fill-opacity="0.08" stroke="#10B981" stroke-width="0.5" stroke-opacity="0.3"/>
+          <text x="38" y="326" font-family="Space Mono, monospace" font-size="8" fill="#10B981" letter-spacing="2.5" font-weight="700">LAYER 3 — AI ENGINE</text>
+          <text x="38" y="341" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">LLaMA 3.1 via Groq</text>
+
+          <g class="arch-box">
+            <rect x="232" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="232" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="311" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Question Gen</text>
+            <text x="311" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Interview Agent</text>
+            <text x="311" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Prompt Engineering</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="406" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="406" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="485" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Follow-up Agent</text>
+            <text x="485" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Conversation history</text>
+            <text x="485" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Context-aware</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="580" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="580" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="659" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">DSA Evaluator</text>
+            <text x="659" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Code review AI</text>
+            <text x="659" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Complexity analysis</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="754" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="754" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="833" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Feedback Report</text>
+            <text x="833" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JSON parser</text>
+            <text x="833" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Score generator</text>
+          </g>
+
+          <!-- ORM label -->
+          <rect x="356" y="414" width="248" height="20" rx="4" fill="#060A14"/>
+          <text x="480" y="427" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#F59E0B" letter-spacing="1.5" font-weight="700">SQLAlchemy ORM — PERSIST</text>
+
+          <!-- Arrows to DB -->
+          <line x1="311" y1="398" x2="311" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="485" y1="398" x2="485" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="659" y1="398" x2="659" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="833" y1="398" x2="833" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+
+          <!-- ═══ LAYER 4: DATABASE ═══ -->
+          <rect x="16" y="446" width="928" height="118" rx="8" fill="url(#grad-orange)" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
+          <rect x="16" y="446" width="5" height="118" rx="3" fill="#F59E0B" filter="url(#glow-orange)"/>
+          <rect x="28" y="454" width="190" height="40" rx="6" fill="#F59E0B" fill-opacity="0.08" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3"/>
+          <text x="38" y="470" font-family="Space Mono, monospace" font-size="8" fill="#F59E0B" letter-spacing="2.5" font-weight="700">LAYER 4 — DATA LAYER</text>
+          <text x="38" y="485" font-family="Syne, sans-serif" font-size="12" font-weight="800" fill="#E2E8F0">SQLite via SQLAlchemy</text>
+
+          <!-- DB Tables — evenly spaced -->
+          <!-- USERS -->
+          <g class="arch-box">
+            <rect x="232" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="232" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="232" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="296" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">USERS</text>
+            <text x="296" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, username, email</text>
+            <text x="296" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">password_hash</text>
+            <text x="296" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">created_at, role</text>
+          </g>
+
+          <!-- FK arrow -->
+          <line x1="360" y1="503" x2="378" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+
+          <!-- SESSIONS -->
+          <g class="arch-box">
+            <rect x="378" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="378" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="378" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="442" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SESSIONS</text>
+            <text x="442" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id, mode</text>
+            <text x="442" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">started_at, ended_at</text>
+            <text x="442" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">status</text>
+          </g>
+
+          <line x1="506" y1="503" x2="524" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+
+          <!-- HISTORY -->
+          <g class="arch-box">
+            <rect x="524" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="524" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="524" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="588" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">HISTORY</text>
+            <text x="588" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
+            <text x="588" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">question, answer</text>
+            <text x="588" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">timestamp, turn</text>
+          </g>
+
+          <line x1="652" y1="503" x2="670" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+
+          <!-- SCORES -->
+          <g class="arch-box">
+            <rect x="670" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="670" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="670" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="734" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SCORES</text>
+            <text x="734" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
+            <text x="734" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">communication, tech</text>
+            <text x="734" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">confidence, overall</text>
+          </g>
+
+          <line x1="798" y1="503" x2="816" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+
+          <!-- DSA_RESULTS -->
+          <g class="arch-box">
+            <rect x="816" y="454" width="112" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="816" y="454" width="112" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="816" y="454" width="112" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="872" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" font-weight="700" fill="#F59E0B">DSA_RESULTS</text>
+            <text x="872" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id</text>
+            <text x="872" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">level, language</text>
+            <text x="872" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">score/10, submitted</text>
+          </g>
+
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERVIEW FLOW -->
+  <section class="section section-dark" id="flow">
+    <div class="container container-wide">
+      <div class="section-label">04 — INTERVIEW FLOW</div>
+      <h2 class="section-title">Voice Interview Journey</h2>
+      <p class="section-sub">Step-by-step walkthrough of a complete voice interview session.</p>
+
+      <div class="flow-diagram">
+        <svg class="flow-svg" viewBox="0 0 960 320" xmlns="http://www.w3.org/2000/svg" id="flow-svg">
+          <defs>
+            <marker id="flow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L10,3 z" fill="#263450"/>
+            </marker>
+            <marker id="flow-arrow-loop" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L10,3 z" fill="#10B981"/>
+            </marker>
+            <marker id="flow-arrow-end" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L10,3 z" fill="#5A7299"/>
+            </marker>
+
+            <!-- Step gradients -->
+            <radialGradient id="step-cyan" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="step-purple" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="step-green" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#10B981" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="step-orange" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="step-pink" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#EC4899" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
+            </radialGradient>
+
+            <pattern id="flow-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+              <circle cx="12" cy="12" r="0.8" fill="#1A2438"/>
+            </pattern>
+          </defs>
+
+          <rect width="960" height="320" fill="url(#flow-dots)"/>
+
+          <!-- Connecting path line (decorative) -->
+          <path d="M80 148 H880" stroke="#1A2438" stroke-width="2" fill="none"/>
+
+          <!-- STEP 1: Login -->
+          <g class="flow-step" data-step="1">
+            <circle cx="80" cy="148" r="50" fill="url(#step-cyan)"/>
+            <circle cx="80" cy="148" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
+            <circle cx="80" cy="148" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="80" y="142" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">01</text>
+            <text x="80" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7.5" fill="#5A7299" letter-spacing="1">JWT</text>
+            <text x="80" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Logs In</text>
+            <text x="80" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#00D4FF">Authentication</text>
+          </g>
+
+          <!-- Arrow 1→2 -->
+          <path d="M124 148 H196" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+          <!-- STEP 2: Select Mode -->
+          <g class="flow-step" data-step="2">
+            <circle cx="240" cy="148" r="50" fill="url(#step-purple)"/>
+            <circle cx="240" cy="148" r="42" fill="#060A14" stroke="#7C3AED" stroke-width="2"/>
+            <circle cx="240" cy="148" r="34" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="240" y="142" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#7C3AED">02</text>
+            <text x="240" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7.5" fill="#5A7299" letter-spacing="1">MODE</text>
+            <text x="240" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Select Mode</text>
+            <text x="240" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#7C3AED">Tech / HR</text>
+          </g>
+
+          <!-- Arrow 2→3 -->
+          <path d="M284 148 H356" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+          <!-- STEP 3: Session Start -->
+          <g class="flow-step" data-step="3">
+            <circle cx="400" cy="148" r="50" fill="url(#step-green)"/>
+            <circle cx="400" cy="148" r="42" fill="#060A14" stroke="#10B981" stroke-width="2"/>
+            <circle cx="400" cy="148" r="34" fill="none" stroke="#10B981" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="400" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#10B981">03</text>
+            <text x="400" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">API CALL</text>
+            <text x="400" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Session Start</text>
+            <text x="400" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#10B981">/interview/start</text>
+          </g>
+
+          <!-- Arrow 3→4 -->
+          <path d="M444 148 H516" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+          <!-- STEP 4: AI Asks -->
+          <g class="flow-step" data-step="4">
+            <circle cx="560" cy="148" r="50" fill="url(#step-orange)"/>
+            <circle cx="560" cy="148" r="42" fill="#060A14" stroke="#F59E0B" stroke-width="2"/>
+            <circle cx="560" cy="148" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="560" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#F59E0B">04</text>
+            <text x="560" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">SYNTHESIS</text>
+            <text x="560" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Asks Q</text>
+            <text x="560" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#F59E0B">SpeechSynthesis</text>
+          </g>
+
+          <!-- Arrow 4→5 -->
+          <path d="M604 148 H676" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+          <!-- STEP 5: User Speaks -->
+          <g class="flow-step" data-step="5">
+            <circle cx="720" cy="148" r="50" fill="url(#step-pink)"/>
+            <circle cx="720" cy="148" r="42" fill="#060A14" stroke="#EC4899" stroke-width="2"/>
+            <circle cx="720" cy="148" r="34" fill="none" stroke="#EC4899" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="720" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#EC4899">05</text>
+            <text x="720" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">RECOGNITION</text>
+            <text x="720" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Speaks</text>
+            <text x="720" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#EC4899">SpeechRecognition</text>
+          </g>
+
+          <!-- Arrow 5→6 -->
+          <path d="M764 148 H836" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+
+          <!-- STEP 6: AI Follow-up / Final Report combined -->
+          <g class="flow-step" data-step="6">
+            <circle cx="880" cy="148" r="50" fill="url(#step-cyan)"/>
+            <circle cx="880" cy="148" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
+            <circle cx="880" cy="148" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="880" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">06</text>
+            <text x="880" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">REPORT</text>
+            <text x="880" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Scorecard</text>
+            <text x="880" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#00D4FF">/feedback/generate</text>
+          </g>
+
+          <!-- LOOP back: step 5 → step 4 (above arc) -->
+          <path d="M720 106 Q720 44 640 44 Q560 44 560 106"
+                stroke="#10B981" stroke-width="2" stroke-dasharray="6,4" fill="none"
+                marker-end="url(#flow-arrow-loop)"/>
+          <!-- Loop label -->
+          <rect x="580" y="20" width="220" height="20" rx="4" fill="#060A14" fill-opacity="0.9"/>
+          <text x="690" y="33" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#10B981" font-weight="700">← loop until session ends</text>
+
+          <!-- End arrow: step 6 → final report (curves down) -->
+          <path d="M880 190 Q880 270 730 270 Q580 270 560 190"
+                stroke="#5A7299" stroke-width="1.5" stroke-dasharray="5,3" fill="none"
+                marker-end="url(#flow-arrow-end)"/>
+          <text x="720" y="287" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">end session → generate scorecard</text>
+
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section" id="stack">
+    <div class="container">
+      <div class="section-label">05 — TECH STACK</div>
+      <h2 class="section-title">Technologies Used</h2>
+      <p class="section-sub">A carefully chosen stack that balances developer experience with production performance.</p>
+
+      <div class="stack-grid">
+        <div class="stack-col">
+          <div class="stack-col-header" style="--clr: var(--cyan)">
+            <span class="stack-col-icon">◈</span> Frontend
+          </div>
+          <div class="stack-item" data-delay="0"><span class="stack-name">React.js</span><span class="stack-role">UI Framework</span></div>
+          <div class="stack-item" data-delay="60"><span class="stack-name">Vite</span><span class="stack-role">Build Tool</span></div>
+          <div class="stack-item" data-delay="120"><span class="stack-name">React Router</span><span class="stack-role">Client Navigation</span></div>
+          <div class="stack-item" data-delay="180"><span class="stack-name">Web Speech API</span><span class="stack-role">Voice Input / Output</span></div>
+          <div class="stack-item" data-delay="240"><span class="stack-name">Custom CSS</span><span class="stack-role">Mission Control Design</span></div>
+        </div>
+        <div class="stack-col">
+          <div class="stack-col-header" style="--clr: var(--purple)">
+            <span class="stack-col-icon">◈</span> Backend
+          </div>
+          <div class="stack-item" data-delay="0"><span class="stack-name">FastAPI</span><span class="stack-role">Python REST API</span></div>
+          <div class="stack-item" data-delay="60"><span class="stack-name">SQLAlchemy</span><span class="stack-role">ORM Layer</span></div>
+          <div class="stack-item" data-delay="120"><span class="stack-name">SQLite</span><span class="stack-role">Database</span></div>
+          <div class="stack-item" data-delay="180"><span class="stack-name">JWT (PyJWT)</span><span class="stack-role">Authentication</span></div>
+          <div class="stack-item" data-delay="240"><span class="stack-name">Pydantic</span><span class="stack-role">Data Validation</span></div>
+        </div>
+        <div class="stack-col">
+          <div class="stack-col-header" style="--clr: var(--green)">
+            <span class="stack-col-icon">◈</span> AI / ML
+          </div>
+          <div class="stack-item" data-delay="0"><span class="stack-name">LLaMA 3.1</span><span class="stack-role">Language Model</span></div>
+          <div class="stack-item" data-delay="60"><span class="stack-name">Groq API</span><span class="stack-role">Ultra-fast Inference</span></div>
+          <div class="stack-item" data-delay="120"><span class="stack-name">Prompt Engineering</span><span class="stack-role">Custom Rubrics</span></div>
+          <div class="stack-item" data-delay="180"><span class="stack-name">JSON Parser</span><span class="stack-role">Robust Response Handler</span></div>
+          <div class="stack-item" data-delay="240"><span class="stack-name">InterviewAgent</span><span class="stack-role">Shared AI Instance</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING CHALLENGES -->
+  <section class="section section-dark" id="challenges">
+    <div class="container">
+      <div class="section-label">06 — ENGINEERING</div>
+      <h2 class="section-title">Key Challenges Solved</h2>
+      <p class="section-sub">Real bugs. Real fixes. Engineering decisions that made the platform production-ready.</p>
+
+      <div class="challenges-list">
+        <div class="challenge-card" data-delay="0">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--red)">BUG FIX</div>
+            <h3 class="ch-title">Shared AI Agent Instance</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>Two separate <code>InterviewAgent</code> objects were created — one for conversation, one for feedback — causing the feedback report to generate on an empty history, returning meaningless scores.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>Refactored to a single shared agent instance per session. Feedback now always reflects the full conversation history, guaranteeing accurate scoring.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card" data-delay="100">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--orange)">PARSER</div>
+            <h3 class="ch-title">JSON Parsing Robustness</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>LLaMA sometimes returns scores as <code>"7/10"</code> strings, or wraps JSON in markdown fences like <code>```json ... ```</code>, breaking all standard parsers.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>Built a custom multi-format parser that handles raw JSON, markdown-wrapped JSON, and fractional score strings uniformly — with a server-side type coercion safety net.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card" data-delay="200">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--purple)">SESSION</div>
+            <h3 class="ch-title">Session Isolation</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>Without session clearing between runs, follow-up questions and scores would bleed across multiple interview sessions for the same user — contaminating history.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>Added a dedicated <code>/interview/start</code> endpoint that clears conversation history before each session. Every session is now independently scored.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card" data-delay="300">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--green)">PROMPT ENG.</div>
+            <h3 class="ch-title">Strict AI Evaluation</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>Without scoring constraints, LLaMA would inflate scores for minimal effort answers — making feedback feel rewarding but completely useless for real preparation.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>Engineered prompts with explicit scoring rubrics and hard ceiling rules. Added a server-side score cap as a final safety net against overly generous LLM responses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER — no brackets -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-text">MockHire<span class="logo-ai">AI</span></span>
+      </div>
+      <div class="footer-stack">
+        <span class="f-tag">FastAPI</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">React.js</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">LLaMA 3.1</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">Groq API</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">SQLite</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">JWT</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag">Web Speech API</span>
+      </div>
+      <div class="footer-copy">Full-stack AI Interview Preparation Platform | Build by Anurag Dubey | anuragdubey26202@gmail.com | 7752889958</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
