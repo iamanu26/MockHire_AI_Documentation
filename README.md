@@ -76,7 +76,7 @@ Fonts used: [Space Mono](https://fonts.google.com/specimen/Space+Mono), [Syne](h
 
 ## Related
 
-- **Main project repo** → [github.com/iamanu26/MockHire_AI](https://github.com/iamanu26/MockHire_AI)
+
 - **Portfolio** → [portfolio-iamanu26.vercel.app](https://portfolio-iamanu26.vercel.app/)
 - **Contact** → anuragdubey26202@gmail.com
 
