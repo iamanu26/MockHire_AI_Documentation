@@ -2,7 +2,7 @@
 
 # 📄 MockHire AI — Documentation Site
 
-### Project showcase & technical writeup for [MockHire AI](https://github.com/iamanu26/MockHire_AI)
+### Project showcase & technical writeup for MockHire AI
 
 [![HTML](https://img.shields.io/badge/Built_with-HTML_CSS_JS-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![Status](https://img.shields.io/badge/Status-Live-10B981?style=for-the-badge)](https://github.com/iamanu26/MockHire_AI)
