@@ -17,7 +17,7 @@
 
 This repository contains the **static documentation site** for the MockHire AI project — a visual, single-page technical writeup built with vanilla HTML, CSS, and JavaScript.
 
-It is **not** the application itself. For the actual platform code, visit the [main MockHire AI repository](https://github.com/iamanu26/MockHire_AI).
+
 
 ---
 
