@@ -13,17 +13,15 @@
 
   <div class="noise-overlay"></div>
 
-  <!-- NAV — no brackets -->
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <div class="nav-logo">
         <span class="logo-text">MockHire<span class="logo-ai">AI</span></span>
-        
         <div class="nav-status">
-        <span class="status-dot"></span>
-        <span class="status-text">DOCUMENTATION</span>
-      </div>
-      
+          <span class="status-dot"></span>
+          <span class="status-text">DOCUMENTATION</span>
+        </div>
       </div>
       <ul class="nav-links">
         <li><a href="#objective" class="nav-link">Objective</a></li>
@@ -32,6 +30,7 @@
         <li><a href="#flow" class="nav-link">Flow</a></li>
         <li><a href="#stack" class="nav-link">Stack</a></li>
         <li><a href="#challenges" class="nav-link">Engineering</a></li>
+        <li><a href="#resources" class="nav-link nav-link-highlight">Resources</a></li>
       </ul>
       <div class="nav-status">
         <span class="status-dot"></span>
@@ -40,7 +39,7 @@
     </div>
   </nav>
 
-  <!-- HERO — fixed two-column layout -->
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-scan-line"></div>
@@ -62,7 +61,7 @@
         </p>
         <div class="hero-stats">
           <div class="stat-card">
-            <div class="stat-num accent-cyan">4</div>
+            <div class="stat-num accent-cyan">6</div>
             <div class="stat-label">Core Modules</div>
           </div>
           <div class="stat-divider"></div>
@@ -82,8 +81,24 @@
           </div>
         </div>
         <div class="hero-cta">
-          <a href="#objective" class="btn-primary">Explore Platform</a>
+          <a href="https://mock-hire-ai-bay.vercel.app/" class="btn-primary">Explore Platform</a>
           <a href="#architecture" class="btn-ghost">View Architecture</a>
+        </div>
+
+        <!-- NEW FEATURE BADGES -->
+        <div class="hero-new-badges">
+          <span class="new-badge new-badge-pg">
+            <span class="nb-icon">🐘</span> PostgreSQL
+          </span>
+          <span class="new-badge new-badge-oauth">
+            <span class="nb-icon">G</span> OAuth 2.0
+          </span>
+          <span class="new-badge new-badge-resume">
+            <span class="nb-icon">📄</span> Resume Upload
+          </span>
+          <span class="new-badge new-badge-email">
+            <span class="nb-icon">✉</span> Email Verified
+          </span>
         </div>
       </div>
 
@@ -96,11 +111,13 @@
           <span class="t-title">mockhire_session.log</span>
         </div>
         <div class="terminal-body" id="terminal-body">
-          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">mockhire start --mode=technical</span></div>
+          <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">mockhire start --mode=technical --resume=cv.pdf</span></div>
           <div class="t-line t-out"><span>✓ Session initialized. Agent loaded.</span></div>
+          <div class="t-line t-out"><span>✓ PostgreSQL: <span class="accent-cyan">CONNECTED</span></span></div>
+          <div class="t-line t-out"><span>✓ Resume parsed: <span class="accent-green">cv.pdf → 3 skills detected</span></span></div>
           <div class="t-line t-out"><span>✓ Speech synthesis: <span class="accent-cyan">ACTIVE</span></span></div>
           <div class="t-line t-out"><span>✓ Speech recognition: <span class="accent-cyan">LISTENING</span></span></div>
-          <div class="t-line"><span class="t-prompt">AI</span> <span class="t-ai-text">"Tell me about your experience with distributed systems..."</span></div>
+          <div class="t-line"><span class="t-prompt">AI</span> <span class="t-ai-text">"I see you've worked with distributed systems at XYZ Corp. Tell me more..."</span></div>
           <div class="t-line t-user"><span class="t-prompt">YOU</span> <span class="t-speaking">▶ Speaking...</span></div>
           <div class="t-line t-out"><span>⟳ Processing response via LLaMA 3.1 (Groq)</span></div>
           <div class="t-line"><span class="t-prompt">AI</span> <span class="t-ai-text">"Interesting. How would you handle consistency in that scenario?"</span></div>
@@ -148,8 +165,9 @@
         <div class="mission-label">◈ MISSION STATEMENT</div>
         <p class="mission-text">
           To create a comprehensive, AI-driven platform that simulates real interview conditions —
-          enabling candidates to practice speaking answers aloud, receive intelligent follow-up questions,
-          and get scored, actionable feedback. All in one place.
+          enabling candidates to practice speaking answers aloud, upload their resume for personalized questions,
+          receive intelligent follow-up questions, get scored actionable feedback, and consult an AI interview
+          coach. All in one place, secured by OAuth, JWT, and email verification.
         </p>
       </div>
 
@@ -185,8 +203,15 @@
         <div class="obj-item" data-delay="320">
           <div class="obj-num">05</div>
           <div class="obj-content">
-            <h4>Secure Personalized History</h4>
-            <p>JWT authentication and per-user interview records. Track progress across sessions over time.</p>
+            <h4>Resume-Aware Interviews</h4>
+            <p>Upload your PDF resume. The AI parses your experience and tailors every question to your actual background.</p>
+          </div>
+        </div>
+        <div class="obj-item" data-delay="400">
+          <div class="obj-num">06</div>
+          <div class="obj-content">
+            <h4>Secure, Verified Identity</h4>
+            <p>Google OAuth 2.0, email verification, and JWT authentication with PostgreSQL-backed user storage.</p>
           </div>
         </div>
       </div>
@@ -197,7 +222,7 @@
   <section class="section section-dark" id="features">
     <div class="container">
       <div class="section-label">02 — FEATURES</div>
-      <h2 class="section-title">Four Core Modules</h2>
+      <h2 class="section-title">Six Core Modules</h2>
       <p class="section-sub">Each module designed to solve a specific gap in how candidates prepare.</p>
 
       <div class="features-grid">
@@ -268,12 +293,55 @@
             </svg>
           </div>
           <h3>User Auth &amp; History</h3>
-          <p>JWT-based authentication keeps your interview records private and persistent. Track improvement over time.</p>
+          <p>JWT + Google OAuth 2.0 + email verification keeps your interview records private and persistent. Track improvement over time.</p>
           <ul class="feature-list">
             <li>JWT login &amp; registration</li>
-            <li>Per-user session history</li>
-            <li>Persistent score records</li>
-            <li>Secure endpoint protection</li>
+            <li>Google OAuth 2.0 sign-in</li>
+            <li>Email verification flow</li>
+            <li>Persistent PostgreSQL records</li>
+          </ul>
+        </div>
+
+        <!-- NEW: Resume Upload -->
+        <div class="feature-card feature-new" data-delay="400">
+          <div class="feature-num">05</div>
+          <div class="feature-new-badge">NEW</div>
+          <div class="feature-icon-wrap" style="--clr: var(--pink)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="8" y="4" width="24" height="32" rx="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M14 12h12M14 17h12M14 22h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 28l4-4 4 4M28 24v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Resume-Aware Interview</h3>
+          <p>Upload your PDF resume before starting an interview. The AI parses your skills, experience, and projects to generate hyper-personalized questions relevant to your background.</p>
+          <ul class="feature-list">
+            <li>PDF resume upload &amp; parsing</li>
+            <li>Experience-tailored questions</li>
+            <li>Skill extraction via LLaMA</li>
+            <li>Stored per-user in PostgreSQL</li>
+          </ul>
+        </div>
+
+        <!-- NEW: Resources / Coach -->
+        <div class="feature-card feature-new" data-delay="500">
+          <div class="feature-num">06</div>
+          <div class="feature-new-badge">NEW</div>
+          <div class="feature-icon-wrap" style="--clr: var(--cyan)">
+            <svg viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M28 10l2 2-2 2M32 12h-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="33" cy="12" r="5" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
+            </svg>
+          </div>
+          <h3>AI Interview Coach</h3>
+          <p>A dedicated Resources tab gives you access to an AI interview coach — powered by the same LLaMA 3.1 model — for on-demand guidance, tips, and practice strategy.</p>
+          <ul class="feature-list">
+            <li>Chat-based coaching interface</li>
+            <li>Interview tips &amp; strategy</li>
+            <li>Role-specific advice</li>
+            <li>Powered by LLaMA 3.1 / Groq</li>
           </ul>
         </div>
       </div>
@@ -285,10 +353,10 @@
     <div class="container container-wide">
       <div class="section-label">03 — ARCHITECTURE</div>
       <h2 class="section-title">System Architecture</h2>
-      <p class="section-sub">How the components connect — from user voice to AI response to database persistence.</p>
+      <p class="section-sub">How the components connect — from user voice &amp; resume to AI response to PostgreSQL persistence.</p>
 
       <div class="arch-diagram-wrap">
-        <svg class="arch-svg" viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" id="arch-svg">
+        <svg class="arch-svg" viewBox="0 0 960 680" xmlns="http://www.w3.org/2000/svg" id="arch-svg">
           <defs>
             <marker id="arrow-cyan" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="#00D4FF"/>
@@ -302,8 +370,9 @@
             <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
             </marker>
-
-            <!-- Glows -->
+            <marker id="arrow-pink" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#EC4899"/>
+            </marker>
             <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="4" result="blur"/>
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -320,13 +389,13 @@
               <feGaussianBlur stdDeviation="4" result="blur"/>
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
-
-            <!-- Grid pattern -->
+            <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
             <pattern id="arch-grid" width="40" height="40" patternUnits="userSpaceOnUse">
               <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#111827" stroke-width="0.6"/>
             </pattern>
-
-            <!-- Layer gradient fills -->
             <linearGradient id="grad-cyan" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.12"/>
               <stop offset="100%" stop-color="#00D4FF" stop-opacity="0.04"/>
@@ -343,62 +412,76 @@
               <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.12"/>
               <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.04"/>
             </linearGradient>
+            <linearGradient id="grad-pink" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#EC4899" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#EC4899" stop-opacity="0.04"/>
+            </linearGradient>
           </defs>
 
-          <!-- Background grid -->
-          <rect width="960" height="580" fill="url(#arch-grid)" opacity="0.6"/>
+          <rect width="960" height="680" fill="url(#arch-grid)" opacity="0.6"/>
 
           <!-- ═══ LAYER 1: FRONTEND ═══ -->
           <rect x="16" y="16" width="928" height="108" rx="8" fill="url(#grad-cyan)" stroke="#00D4FF" stroke-width="1" stroke-opacity="0.3"/>
-          <!-- Left accent bar -->
           <rect x="16" y="16" width="5" height="108" rx="3" fill="#00D4FF" filter="url(#glow-cyan)"/>
-          <!-- Layer badge -->
           <rect x="28" y="24" width="190" height="40" rx="6" fill="#00D4FF" fill-opacity="0.08" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3"/>
           <text x="38" y="40" font-family="Space Mono, monospace" font-size="8" fill="#00D4FF" letter-spacing="2.5" font-weight="700">LAYER 1 — FRONTEND</text>
           <text x="38" y="55" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">React.js + Vite</text>
 
-          <!-- Frontend boxes -->
           <g class="arch-box">
-            <rect x="232" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
-            <rect x="232" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
-            <text x="311" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Interface</text>
-            <text x="311" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">React Components</text>
-            <text x="311" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">+ React Router</text>
+            <rect x="232" y="24" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="232" y="24" width="128" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="296" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">User Interface</text>
+            <text x="296" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">React Components</text>
+            <text x="296" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">+ React Router</text>
           </g>
 
           <g class="arch-box">
-            <rect x="406" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
-            <rect x="406" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
-            <text x="485" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Voice I/O</text>
-            <text x="485" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Web Speech API</text>
-            <text x="485" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">SpeechSynthesis</text>
+            <rect x="372" y="24" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="372" y="24" width="128" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="436" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Voice I/O</text>
+            <text x="436" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Web Speech API</text>
+            <text x="436" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">SpeechSynthesis</text>
           </g>
 
           <g class="arch-box">
-            <rect x="580" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
-            <rect x="580" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
-            <text x="659" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Code Editor</text>
-            <text x="659" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Browser-based IDE</text>
-            <text x="659" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Multi-language</text>
+            <rect x="512" y="24" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#EC4899" stroke-width="1.5"/>
+            <rect x="512" y="24" width="128" height="5" rx="3" fill="#EC4899" opacity="0.7"/>
+            <!-- NEW badge -->
+            <rect x="600" y="28" width="32" height="14" rx="3" fill="#EC4899" fill-opacity="0.9"/>
+            <text x="616" y="38" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" font-weight="700" fill="#060A14">NEW</text>
+            <text x="576" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Resume Upload</text>
+            <text x="576" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">PDF Parser UI</text>
+            <text x="576" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Drag &amp; Drop</text>
           </g>
 
           <g class="arch-box">
-            <rect x="754" y="24" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
-            <rect x="754" y="24" width="158" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
-            <text x="833" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Auth Forms</text>
-            <text x="833" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Login / Register</text>
-            <text x="833" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JWT Token Store</text>
+            <rect x="652" y="24" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="652" y="24" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <!-- NEW badge -->
+            <rect x="740" y="28" width="32" height="14" rx="3" fill="#F59E0B" fill-opacity="0.9"/>
+            <text x="756" y="38" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" font-weight="700" fill="#060A14">NEW</text>
+            <text x="716" y="58" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Resources Tab</text>
+            <text x="716" y="74" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Coach Chat UI</text>
+            <text x="716" y="88" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Interview Tips</text>
           </g>
 
-          <!-- Connector label -->
+          <g class="arch-box">
+            <rect x="792" y="24" width="140" height="88" rx="6" fill="#0A0E1A" stroke="#00D4FF" stroke-width="1.5"/>
+            <rect x="792" y="24" width="140" height="5" rx="3" fill="#00D4FF" opacity="0.7"/>
+            <text x="862" y="52" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Auth Forms</text>
+            <text x="862" y="68" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">Login / Register</text>
+            <text x="862" y="82" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#10B981">OAuth + Email OTP</text>
+          </g>
+
+          <!-- connector label -->
           <rect x="380" y="128" width="200" height="20" rx="4" fill="#060A14"/>
           <text x="480" y="141" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#00D4FF" letter-spacing="1.5" font-weight="700">HTTP / REST API CALLS</text>
 
-          <!-- Arrows down to API layer -->
-          <line x1="311" y1="112" x2="311" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
-          <line x1="485" y1="112" x2="485" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
-          <line x1="659" y1="112" x2="659" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
-          <line x1="833" y1="112" x2="833" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="296" y1="112" x2="296" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="436" y1="112" x2="436" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
+          <line x1="576" y1="112" x2="576" y2="154" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-pink)" class="arch-line" opacity="0.8"/>
+          <line x1="716" y1="112" x2="716" y2="154" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="862" y1="112" x2="862" y2="154" stroke="#00D4FF" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cyan)" class="arch-line" opacity="0.8"/>
 
           <!-- ═══ LAYER 2: BACKEND API ═══ -->
           <rect x="16" y="158" width="928" height="108" rx="8" fill="url(#grad-purple)" stroke="#7C3AED" stroke-width="1" stroke-opacity="0.3"/>
@@ -408,50 +491,54 @@
           <text x="38" y="197" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">FastAPI (Python)</text>
 
           <g class="arch-box">
-            <rect x="232" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
-            <rect x="232" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
-            <text x="311" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/auth/*</text>
-            <text x="311" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">register / login</text>
-            <text x="311" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JWT issue / verify</text>
+            <rect x="232" y="166" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="232" y="166" width="128" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="296" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#A78BFA">/auth/*</text>
+            <text x="296" y="212" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">register / login</text>
+            <text x="296" y="226" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#10B981">OAuth / verify-email</text>
           </g>
 
           <g class="arch-box">
-            <rect x="406" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
-            <rect x="406" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
-            <text x="485" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/interview/*</text>
-            <text x="485" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">start / answer</text>
-            <text x="485" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">end / history</text>
+            <rect x="372" y="166" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="372" y="166" width="128" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="436" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#A78BFA">/interview/*</text>
+            <text x="436" y="212" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">start / answer</text>
+            <text x="436" y="226" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">end / history</text>
           </g>
 
           <g class="arch-box">
-            <rect x="580" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
-            <rect x="580" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
-            <text x="659" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/dsa/*</text>
-            <text x="659" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">generate / submit</text>
-            <text x="659" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">evaluate / score</text>
+            <rect x="512" y="166" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#EC4899" stroke-width="1.5"/>
+            <rect x="512" y="166" width="128" height="5" rx="3" fill="#EC4899" opacity="0.7"/>
+            <text x="576" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F9A8D4">/resume/*</text>
+            <text x="576" y="212" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">upload / parse</text>
+            <text x="576" y="226" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">extract / store</text>
           </g>
 
           <g class="arch-box">
-            <rect x="754" y="166" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
-            <rect x="754" y="166" width="158" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
-            <text x="833" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="11" font-weight="700" fill="#A78BFA">/feedback/*</text>
-            <text x="833" y="214" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">generate report</text>
-            <text x="833" y="230" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">score / summary</text>
+            <rect x="652" y="166" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="652" y="166" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="716" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#FCD34D">/coach/*</text>
+            <text x="716" y="212" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">chat / advice</text>
+            <text x="716" y="226" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">tips / strategy</text>
           </g>
 
-          <!-- JWT Badge -->
-          <rect x="920" y="180" width="0" height="0"/>
-          <!-- (JWT shown inline via the /auth box) -->
+          <g class="arch-box">
+            <rect x="792" y="166" width="140" height="88" rx="6" fill="#0A0E1A" stroke="#7C3AED" stroke-width="1.5"/>
+            <rect x="792" y="166" width="140" height="5" rx="3" fill="#7C3AED" opacity="0.7"/>
+            <text x="862" y="196" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#A78BFA">/dsa + /feedback</text>
+            <text x="862" y="212" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">generate / submit</text>
+            <text x="862" y="226" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">evaluate / score</text>
+          </g>
 
           <!-- Groq label -->
           <rect x="356" y="270" width="248" height="20" rx="4" fill="#060A14"/>
           <text x="480" y="283" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#7C3AED" letter-spacing="1.5" font-weight="700">GROQ API CALLS (LLaMA 3.1)</text>
 
-          <!-- Arrows to AI -->
-          <line x1="311" y1="254" x2="311" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
-          <line x1="485" y1="254" x2="485" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
-          <line x1="659" y1="254" x2="659" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
-          <line x1="833" y1="254" x2="833" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="296" y1="254" x2="296" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="436" y1="254" x2="436" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
+          <line x1="576" y1="254" x2="576" y2="298" stroke="#EC4899" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-pink)" class="arch-line" opacity="0.8"/>
+          <line x1="716" y1="254" x2="716" y2="298" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="862" y1="254" x2="862" y2="298" stroke="#7C3AED" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-purple)" class="arch-line" opacity="0.8"/>
 
           <!-- ═══ LAYER 3: AI ENGINE ═══ -->
           <rect x="16" y="302" width="928" height="108" rx="8" fill="url(#grad-green)" stroke="#10B981" stroke-width="1" stroke-opacity="0.3"/>
@@ -461,119 +548,141 @@
           <text x="38" y="341" font-family="Syne, sans-serif" font-size="13" font-weight="800" fill="#E2E8F0">LLaMA 3.1 via Groq</text>
 
           <g class="arch-box">
-            <rect x="232" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
-            <rect x="232" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
-            <text x="311" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Question Gen</text>
-            <text x="311" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Interview Agent</text>
-            <text x="311" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Prompt Engineering</text>
+            <rect x="232" y="310" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="232" y="310" width="128" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="296" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Question Gen</text>
+            <text x="296" y="360" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Interview Agent</text>
+            <text x="296" y="376" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Prompt Engineering</text>
           </g>
 
           <g class="arch-box">
-            <rect x="406" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
-            <rect x="406" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
-            <text x="485" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Follow-up Agent</text>
-            <text x="485" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Conversation history</text>
-            <text x="485" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Context-aware</text>
+            <rect x="372" y="310" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="372" y="310" width="128" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="436" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Follow-up Agent</text>
+            <text x="436" y="360" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Conversation history</text>
+            <text x="436" y="376" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Context-aware</text>
           </g>
 
           <g class="arch-box">
-            <rect x="580" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
-            <rect x="580" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
-            <text x="659" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">DSA Evaluator</text>
-            <text x="659" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Code review AI</text>
-            <text x="659" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Complexity analysis</text>
+            <rect x="512" y="310" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#EC4899" stroke-width="1.5"/>
+            <rect x="512" y="310" width="128" height="5" rx="3" fill="#EC4899" opacity="0.7"/>
+            <text x="576" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Resume Parser</text>
+            <text x="576" y="360" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">PDF → text extract</text>
+            <text x="576" y="376" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Skill inference AI</text>
           </g>
 
           <g class="arch-box">
-            <rect x="754" y="310" width="158" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
-            <rect x="754" y="310" width="158" height="5" rx="3" fill="#10B981" opacity="0.7"/>
-            <text x="833" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Feedback Report</text>
-            <text x="833" y="362" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">JSON parser</text>
-            <text x="833" y="378" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">Score generator</text>
+            <rect x="652" y="310" width="128" height="88" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="652" y="310" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="716" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">Coach Agent</text>
+            <text x="716" y="360" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">LLaMA 3.1</text>
+            <text x="716" y="376" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Coaching prompts</text>
+          </g>
+
+          <g class="arch-box">
+            <rect x="792" y="310" width="140" height="88" rx="6" fill="#0A0E1A" stroke="#10B981" stroke-width="1.5"/>
+            <rect x="792" y="310" width="140" height="5" rx="3" fill="#10B981" opacity="0.7"/>
+            <text x="862" y="344" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11.5" font-weight="600" fill="#F0F6FF">DSA + Feedback</text>
+            <text x="862" y="360" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Code review AI</text>
+            <text x="862" y="376" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#5A7299">Score generator</text>
           </g>
 
           <!-- ORM label -->
           <rect x="356" y="414" width="248" height="20" rx="4" fill="#060A14"/>
           <text x="480" y="427" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#F59E0B" letter-spacing="1.5" font-weight="700">SQLAlchemy ORM — PERSIST</text>
 
-          <!-- Arrows to DB -->
-          <line x1="311" y1="398" x2="311" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
-          <line x1="485" y1="398" x2="485" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
-          <line x1="659" y1="398" x2="659" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
-          <line x1="833" y1="398" x2="833" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="296" y1="398" x2="296" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="436" y1="398" x2="436" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="576" y1="398" x2="576" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="716" y1="398" x2="716" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
+          <line x1="862" y1="398" x2="862" y2="442" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-orange)" class="arch-line" opacity="0.8"/>
 
           <!-- ═══ LAYER 4: DATABASE ═══ -->
-          <rect x="16" y="446" width="928" height="118" rx="8" fill="url(#grad-orange)" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
-          <rect x="16" y="446" width="5" height="118" rx="3" fill="#F59E0B" filter="url(#glow-orange)"/>
-          <rect x="28" y="454" width="190" height="40" rx="6" fill="#F59E0B" fill-opacity="0.08" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3"/>
+          <rect x="16" y="446" width="928" height="220" rx="8" fill="url(#grad-orange)" stroke="#F59E0B" stroke-width="1" stroke-opacity="0.3"/>
+          <rect x="16" y="446" width="5" height="220" rx="3" fill="#F59E0B" filter="url(#glow-orange)"/>
+          <rect x="28" y="454" width="190" height="52" rx="6" fill="#F59E0B" fill-opacity="0.08" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3"/>
           <text x="38" y="470" font-family="Space Mono, monospace" font-size="8" fill="#F59E0B" letter-spacing="2.5" font-weight="700">LAYER 4 — DATA LAYER</text>
-          <text x="38" y="485" font-family="Syne, sans-serif" font-size="12" font-weight="800" fill="#E2E8F0">SQLite via SQLAlchemy</text>
+          <text x="38" y="485" font-family="Syne, sans-serif" font-size="12" font-weight="800" fill="#E2E8F0">PostgreSQL</text>
+          <text x="38" y="498" font-family="Space Mono, monospace" font-size="8" fill="#10B981">via SQLAlchemy ORM</text>
 
-          <!-- DB Tables — evenly spaced -->
           <!-- USERS -->
           <g class="arch-box">
-            <rect x="232" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
-            <rect x="232" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
-            <rect x="232" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
-            <text x="296" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">USERS</text>
-            <text x="296" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, username, email</text>
-            <text x="296" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">password_hash</text>
-            <text x="296" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">created_at, role</text>
+            <rect x="232" y="454" width="130" height="108" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="232" y="454" width="130" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="232" y="454" width="130" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="297" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">USERS</text>
+            <text x="297" y="495" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, username, email</text>
+            <text x="297" y="509" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">password_hash</text>
+            <text x="297" y="523" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#10B981">oauth_provider</text>
+            <text x="297" y="537" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#10B981">is_verified</text>
           </g>
 
           <!-- FK arrow -->
-          <line x1="360" y1="503" x2="378" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+          <line x1="362" y1="508" x2="380" y2="508" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
 
           <!-- SESSIONS -->
           <g class="arch-box">
-            <rect x="378" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
-            <rect x="378" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
-            <rect x="378" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
-            <text x="442" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SESSIONS</text>
-            <text x="442" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id, mode</text>
-            <text x="442" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">started_at, ended_at</text>
-            <text x="442" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">status</text>
+            <rect x="380" y="454" width="130" height="108" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="380" y="454" width="130" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="380" y="454" width="130" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="445" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SESSIONS</text>
+            <text x="445" y="495" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id, mode</text>
+            <text x="445" y="509" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">started_at, ended_at</text>
+            <text x="445" y="523" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#EC4899">resume_id (fk)</text>
+            <text x="445" y="537" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">status</text>
           </g>
 
-          <line x1="506" y1="503" x2="524" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+          <line x1="510" y1="508" x2="528" y2="508" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
 
-          <!-- HISTORY -->
+          <!-- RESUMES -->
           <g class="arch-box">
-            <rect x="524" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
-            <rect x="524" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
-            <rect x="524" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
-            <text x="588" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">HISTORY</text>
-            <text x="588" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
-            <text x="588" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">question, answer</text>
-            <text x="588" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">timestamp, turn</text>
+            <rect x="528" y="454" width="130" height="108" rx="6" fill="#0A0E1A" stroke="#EC4899" stroke-width="2"/>
+            <rect x="528" y="454" width="130" height="28" rx="5" fill="#EC4899" fill-opacity="0.12"/>
+            <rect x="528" y="454" width="130" height="5" rx="3" fill="#EC4899" opacity="0.7"/>
+            <!-- NEW badge -->
+            <rect x="622" y="458" width="28" height="12" rx="2" fill="#EC4899" fill-opacity="0.9"/>
+            <text x="636" y="467" text-anchor="middle" font-family="Space Mono, monospace" font-size="6.5" font-weight="700" fill="#060A14">NEW</text>
+            <text x="593" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#EC4899">RESUMES</text>
+            <text x="593" y="495" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id</text>
+            <text x="593" y="509" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">file_path, text</text>
+            <text x="593" y="523" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">skills_json</text>
+            <text x="593" y="537" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">uploaded_at</text>
           </g>
 
-          <line x1="652" y1="503" x2="670" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+          <line x1="658" y1="508" x2="676" y2="508" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
 
           <!-- SCORES -->
           <g class="arch-box">
-            <rect x="670" y="454" width="128" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
-            <rect x="670" y="454" width="128" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
-            <rect x="670" y="454" width="128" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
-            <text x="734" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SCORES</text>
-            <text x="734" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
-            <text x="734" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">communication, tech</text>
-            <text x="734" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">confidence, overall</text>
+            <rect x="676" y="454" width="130" height="108" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="676" y="454" width="130" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="676" y="454" width="130" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="741" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="9.5" font-weight="700" fill="#F59E0B">SCORES</text>
+            <text x="741" y="495" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
+            <text x="741" y="509" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">communication, tech</text>
+            <text x="741" y="523" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">confidence, overall</text>
+            <text x="741" y="537" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">grammar</text>
           </g>
 
-          <line x1="798" y1="503" x2="816" y2="503" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
+          <line x1="806" y1="508" x2="824" y2="508" stroke="#F59E0B" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-orange)" opacity="0.4"/>
 
-          <!-- DSA_RESULTS -->
+          <!-- HISTORY + DSA side by side -->
           <g class="arch-box">
-            <rect x="816" y="454" width="112" height="98" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
-            <rect x="816" y="454" width="112" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
-            <rect x="816" y="454" width="112" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
-            <text x="872" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" font-weight="700" fill="#F59E0B">DSA_RESULTS</text>
-            <text x="872" y="493" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, user_id</text>
-            <text x="872" y="507" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">level, language</text>
-            <text x="872" y="521" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">score/10, submitted</text>
+            <rect x="824" y="454" width="108" height="108" rx="6" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="824" y="454" width="108" height="28" rx="5" fill="#F59E0B" fill-opacity="0.12"/>
+            <rect x="824" y="454" width="108" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="878" y="474" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" font-weight="700" fill="#F59E0B">HISTORY + DSA</text>
+            <text x="878" y="495" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">id, session_id</text>
+            <text x="878" y="509" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">question, answer</text>
+            <text x="878" y="523" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">dsa_level, score</text>
+            <text x="878" y="537" text-anchor="middle" font-family="Space Mono, monospace" font-size="8" fill="#5A7299">timestamp</text>
           </g>
 
+          <!-- PostgreSQL badge at bottom -->
+          <rect x="232" y="574" width="700" height="80" rx="8" fill="rgba(245,158,11,0.04)" stroke="rgba(245,158,11,0.15)" stroke-width="1"/>
+          <rect x="232" y="574" width="700" height="4" rx="2" fill="#F59E0B" opacity="0.3"/>
+          <text x="582" y="602" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#F59E0B" letter-spacing="2" font-weight="700">UPGRADED FROM SQLITE → POSTGRESQL</text>
+          <text x="582" y="622" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12" fill="#5A7299">Production-grade RDBMS · Connection pooling · ACID compliance · Alembic migrations</text>
+          <text x="582" y="640" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#10B981">DATABASE_URL = postgresql+asyncpg://user:pass@host:5432/mockhire</text>
         </svg>
       </div>
     </div>
@@ -584,10 +693,10 @@
     <div class="container container-wide">
       <div class="section-label">04 — INTERVIEW FLOW</div>
       <h2 class="section-title">Voice Interview Journey</h2>
-      <p class="section-sub">Step-by-step walkthrough of a complete voice interview session.</p>
+      <p class="section-sub">Step-by-step walkthrough of a complete voice interview session — now with resume context.</p>
 
       <div class="flow-diagram">
-        <svg class="flow-svg" viewBox="0 0 960 320" xmlns="http://www.w3.org/2000/svg" id="flow-svg">
+        <svg class="flow-svg" viewBox="0 0 1060 360" xmlns="http://www.w3.org/2000/svg" id="flow-svg">
           <defs>
             <marker id="flow-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
               <path d="M0,0 L0,6 L10,3 z" fill="#263450"/>
@@ -598,8 +707,6 @@
             <marker id="flow-arrow-end" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
               <path d="M0,0 L0,6 L10,3 z" fill="#5A7299"/>
             </marker>
-
-            <!-- Step gradients -->
             <radialGradient id="step-cyan" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.15"/>
               <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
@@ -620,112 +727,114 @@
               <stop offset="0%" stop-color="#EC4899" stop-opacity="0.15"/>
               <stop offset="100%" stop-color="#EC4899" stop-opacity="0"/>
             </radialGradient>
-
             <pattern id="flow-dots" width="24" height="24" patternUnits="userSpaceOnUse">
               <circle cx="12" cy="12" r="0.8" fill="#1A2438"/>
             </pattern>
           </defs>
 
-          <rect width="960" height="320" fill="url(#flow-dots)"/>
+          <rect width="1060" height="360" fill="url(#flow-dots)"/>
+          <path d="M80 168 H980" stroke="#1A2438" stroke-width="2" fill="none"/>
 
-          <!-- Connecting path line (decorative) -->
-          <path d="M80 148 H880" stroke="#1A2438" stroke-width="2" fill="none"/>
-
-          <!-- STEP 1: Login -->
+          <!-- STEP 1: Login + OAuth -->
           <g class="flow-step" data-step="1">
-            <circle cx="80" cy="148" r="50" fill="url(#step-cyan)"/>
-            <circle cx="80" cy="148" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
-            <circle cx="80" cy="148" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="80" y="142" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">01</text>
-            <text x="80" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7.5" fill="#5A7299" letter-spacing="1">JWT</text>
-            <text x="80" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Logs In</text>
-            <text x="80" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#00D4FF">Authentication</text>
+            <circle cx="80" cy="168" r="50" fill="url(#step-cyan)"/>
+            <circle cx="80" cy="168" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
+            <circle cx="80" cy="168" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="80" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">01</text>
+            <text x="80" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#10B981" letter-spacing="1">OAUTH</text>
+            <text x="80" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Login / OAuth</text>
+            <text x="80" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#00D4FF">JWT + Google</text>
           </g>
 
-          <!-- Arrow 1→2 -->
-          <path d="M124 148 H196" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+          <path d="M124 168 H196" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
 
-          <!-- STEP 2: Select Mode -->
+          <!-- STEP 2: Email Verify -->
           <g class="flow-step" data-step="2">
-            <circle cx="240" cy="148" r="50" fill="url(#step-purple)"/>
-            <circle cx="240" cy="148" r="42" fill="#060A14" stroke="#7C3AED" stroke-width="2"/>
-            <circle cx="240" cy="148" r="34" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="240" y="142" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#7C3AED">02</text>
-            <text x="240" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7.5" fill="#5A7299" letter-spacing="1">MODE</text>
-            <text x="240" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Select Mode</text>
-            <text x="240" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#7C3AED">Tech / HR</text>
+            <circle cx="240" cy="168" r="50" fill="url(#step-green)"/>
+            <circle cx="240" cy="168" r="42" fill="#060A14" stroke="#10B981" stroke-width="2"/>
+            <circle cx="240" cy="168" r="34" fill="none" stroke="#10B981" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="240" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#10B981">02</text>
+            <text x="240" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="6" fill="#5A7299" letter-spacing="0.5">VERIFY</text>
+            <text x="240" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Email OTP</text>
+            <text x="240" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#10B981">is_verified = true</text>
           </g>
 
-          <!-- Arrow 2→3 -->
-          <path d="M284 148 H356" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+          <path d="M284 168 H356" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
 
-          <!-- STEP 3: Session Start -->
+          <!-- STEP 3: Resume Upload -->
           <g class="flow-step" data-step="3">
-            <circle cx="400" cy="148" r="50" fill="url(#step-green)"/>
-            <circle cx="400" cy="148" r="42" fill="#060A14" stroke="#10B981" stroke-width="2"/>
-            <circle cx="400" cy="148" r="34" fill="none" stroke="#10B981" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="400" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#10B981">03</text>
-            <text x="400" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">API CALL</text>
-            <text x="400" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Session Start</text>
-            <text x="400" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#10B981">/interview/start</text>
+            <circle cx="400" cy="168" r="50" fill="url(#step-pink)"/>
+            <circle cx="400" cy="168" r="42" fill="#060A14" stroke="#EC4899" stroke-width="2"/>
+            <circle cx="400" cy="168" r="34" fill="none" stroke="#EC4899" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="400" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#EC4899">03</text>
+            <text x="400" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="6" fill="#5A7299" letter-spacing="0.5">RESUME</text>
+            <text x="400" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Upload PDF</text>
+            <text x="400" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#EC4899">AI parses skills</text>
           </g>
 
-          <!-- Arrow 3→4 -->
-          <path d="M444 148 H516" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+          <path d="M444 168 H516" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
 
-          <!-- STEP 4: AI Asks -->
+          <!-- STEP 4: Select Mode -->
           <g class="flow-step" data-step="4">
-            <circle cx="560" cy="148" r="50" fill="url(#step-orange)"/>
-            <circle cx="560" cy="148" r="42" fill="#060A14" stroke="#F59E0B" stroke-width="2"/>
-            <circle cx="560" cy="148" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="560" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#F59E0B">04</text>
-            <text x="560" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">SYNTHESIS</text>
-            <text x="560" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Asks Q</text>
-            <text x="560" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#F59E0B">SpeechSynthesis</text>
+            <circle cx="560" cy="168" r="50" fill="url(#step-purple)"/>
+            <circle cx="560" cy="168" r="42" fill="#060A14" stroke="#7C3AED" stroke-width="2"/>
+            <circle cx="560" cy="168" r="34" fill="none" stroke="#7C3AED" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="560" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#7C3AED">04</text>
+            <text x="560" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="6.5" fill="#5A7299" letter-spacing="0.5">MODE</text>
+            <text x="560" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">Select Mode</text>
+            <text x="560" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#7C3AED">Tech / HR</text>
           </g>
 
-          <!-- Arrow 4→5 -->
-          <path d="M604 148 H676" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+          <path d="M604 168 H676" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
 
-          <!-- STEP 5: User Speaks -->
+          <!-- STEP 5: AI Asks -->
           <g class="flow-step" data-step="5">
-            <circle cx="720" cy="148" r="50" fill="url(#step-pink)"/>
-            <circle cx="720" cy="148" r="42" fill="#060A14" stroke="#EC4899" stroke-width="2"/>
-            <circle cx="720" cy="148" r="34" fill="none" stroke="#EC4899" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="720" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#EC4899">05</text>
-            <text x="720" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">RECOGNITION</text>
-            <text x="720" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">User Speaks</text>
-            <text x="720" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#EC4899">SpeechRecognition</text>
+            <circle cx="720" cy="168" r="50" fill="url(#step-orange)"/>
+            <circle cx="720" cy="168" r="42" fill="#060A14" stroke="#F59E0B" stroke-width="2"/>
+            <circle cx="720" cy="168" r="34" fill="none" stroke="#F59E0B" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="720" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#F59E0B">05</text>
+            <text x="720" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="6.5" fill="#5A7299" letter-spacing="0.5">AI Q</text>
+            <text x="720" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Asks Q</text>
+            <text x="720" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#F59E0B">Resume-tailored</text>
           </g>
 
-          <!-- Arrow 5→6 -->
-          <path d="M764 148 H836" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
+          <path d="M764 168 H836" stroke="#263450" stroke-width="2" fill="none" marker-end="url(#flow-arrow)"/>
 
-          <!-- STEP 6: AI Follow-up / Final Report combined -->
+          <!-- STEP 6: Speak + Score -->
           <g class="flow-step" data-step="6">
-            <circle cx="880" cy="148" r="50" fill="url(#step-cyan)"/>
-            <circle cx="880" cy="148" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
-            <circle cx="880" cy="148" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
-            <text x="880" y="140" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">06</text>
-            <text x="880" y="157" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299" letter-spacing="0.5">REPORT</text>
-            <text x="880" y="208" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Scorecard</text>
-            <text x="880" y="224" text-anchor="middle" font-family="Space Mono, monospace" font-size="8.5" fill="#00D4FF">/feedback/generate</text>
+            <circle cx="880" cy="168" r="50" fill="url(#step-cyan)"/>
+            <circle cx="880" cy="168" r="42" fill="#060A14" stroke="#00D4FF" stroke-width="2"/>
+            <circle cx="880" cy="168" r="34" fill="none" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="3,3"/>
+            <text x="880" y="162" text-anchor="middle" font-family="Syne, sans-serif" font-size="20" font-weight="800" fill="#00D4FF">06</text>
+            <text x="880" y="177" text-anchor="middle" font-family="Space Mono, monospace" font-size="6.5" fill="#5A7299" letter-spacing="0.5">REPORT</text>
+            <text x="880" y="228" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="12.5" font-weight="600" fill="#F0F6FF">AI Scorecard</text>
+            <text x="880" y="244" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#00D4FF">5 metrics → PG</text>
           </g>
 
-          <!-- LOOP back: step 5 → step 4 (above arc) -->
-          <path d="M720 106 Q720 44 640 44 Q560 44 560 106"
+          <!-- LOOP back step 6 → step 5 -->
+          <path d="M720 126 Q720 44 800 44 Q880 44 880 126"
                 stroke="#10B981" stroke-width="2" stroke-dasharray="6,4" fill="none"
                 marker-end="url(#flow-arrow-loop)"/>
-          <!-- Loop label -->
-          <rect x="580" y="20" width="220" height="20" rx="4" fill="#060A14" fill-opacity="0.9"/>
-          <text x="690" y="33" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#10B981" font-weight="700">← loop until session ends</text>
+          <rect x="718" y="20" width="220" height="20" rx="4" fill="#060A14" fill-opacity="0.9"/>
+          <text x="828" y="33" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#10B981" font-weight="700">← loop until session ends</text>
 
-          <!-- End arrow: step 6 → final report (curves down) -->
-          <path d="M880 190 Q880 270 730 270 Q580 270 560 190"
+          <!-- End arrow curves down -->
+          <path d="M880 210 Q880 300 730 300 Q580 300 560 210"
                 stroke="#5A7299" stroke-width="1.5" stroke-dasharray="5,3" fill="none"
                 marker-end="url(#flow-arrow-end)"/>
-          <text x="720" y="287" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">end session → generate scorecard</text>
+          <text x="720" y="320" text-anchor="middle" font-family="Space Mono, monospace" font-size="9" fill="#5A7299">end session → generate scorecard → save to PostgreSQL</text>
 
+          <!-- Resources side annotation -->
+          <g>
+            <rect x="990" y="120" width="64" height="100" rx="8" fill="#0A0E1A" stroke="#F59E0B" stroke-width="1.5"/>
+            <rect x="990" y="120" width="64" height="5" rx="3" fill="#F59E0B" opacity="0.7"/>
+            <text x="1022" y="148" text-anchor="middle" font-family="Space Mono, monospace" font-size="7.5" font-weight="700" fill="#F59E0B">COACH</text>
+            <text x="1022" y="162" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299">Resources</text>
+            <text x="1022" y="176" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299">Tab → AI</text>
+            <text x="1022" y="190" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#5A7299">Coach</text>
+            <text x="1022" y="207" text-anchor="middle" font-family="Space Mono, monospace" font-size="7" fill="#F59E0B">LLaMA 3.1</text>
+            <path d="M924 168 H988" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-orange)" opacity="0.7"/>
+          </g>
         </svg>
       </div>
     </div>
@@ -755,9 +864,24 @@
           </div>
           <div class="stack-item" data-delay="0"><span class="stack-name">FastAPI</span><span class="stack-role">Python REST API</span></div>
           <div class="stack-item" data-delay="60"><span class="stack-name">SQLAlchemy</span><span class="stack-role">ORM Layer</span></div>
-          <div class="stack-item" data-delay="120"><span class="stack-name">SQLite</span><span class="stack-role">Database</span></div>
-          <div class="stack-item" data-delay="180"><span class="stack-name">JWT (PyJWT)</span><span class="stack-role">Authentication</span></div>
-          <div class="stack-item" data-delay="240"><span class="stack-name">Pydantic</span><span class="stack-role">Data Validation</span></div>
+          <div class="stack-item stack-item-new" data-delay="120">
+            <span class="stack-name">PostgreSQL <span class="stack-new-badge">UPGRADED</span></span>
+            <span class="stack-role">Production Database</span>
+          </div>
+          <div class="stack-item stack-item-new" data-delay="180">
+            <span class="stack-name">Authlib <span class="stack-new-badge">NEW</span></span>
+            <span class="stack-role">Google OAuth 2.0</span>
+          </div>
+          <div class="stack-item stack-item-new" data-delay="240">
+            <span class="stack-name">SendGrid / SMTP <span class="stack-new-badge">NEW</span></span>
+            <span class="stack-role">Email Verification</span>
+          </div>
+          <div class="stack-item stack-item-new" data-delay="300">
+            <span class="stack-name">PyMuPDF <span class="stack-new-badge">NEW</span></span>
+            <span class="stack-role">Resume PDF Parser</span>
+          </div>
+          <div class="stack-item" data-delay="360"><span class="stack-name">JWT (PyJWT)</span><span class="stack-role">Authentication</span></div>
+          <div class="stack-item" data-delay="420"><span class="stack-name">Pydantic</span><span class="stack-role">Data Validation</span></div>
         </div>
         <div class="stack-col">
           <div class="stack-col-header" style="--clr: var(--green)">
@@ -767,7 +891,10 @@
           <div class="stack-item" data-delay="60"><span class="stack-name">Groq API</span><span class="stack-role">Ultra-fast Inference</span></div>
           <div class="stack-item" data-delay="120"><span class="stack-name">Prompt Engineering</span><span class="stack-role">Custom Rubrics</span></div>
           <div class="stack-item" data-delay="180"><span class="stack-name">JSON Parser</span><span class="stack-role">Robust Response Handler</span></div>
-          <div class="stack-item" data-delay="240"><span class="stack-name">InterviewAgent</span><span class="stack-role">Shared AI Instance</span></div>
+          <div class="stack-item stack-item-new" data-delay="240">
+            <span class="stack-name">InterviewAgent <span class="stack-new-badge">UPDATED</span></span>
+            <span class="stack-role">Resume-aware + Coach</span>
+          </div>
         </div>
       </div>
     </div>
@@ -787,7 +914,7 @@
             <h3 class="ch-title">Shared AI Agent Instance</h3>
             <div class="ch-problem">
               <span class="ch-label ch-problem-label">⚠ Problem</span>
-              <p>Two separate <code>InterviewAgent</code> objects were created — one for conversation, one for feedback — causing the feedback report to generate on an empty history, returning meaningless scores.</p>
+              <p>Two separate <code>InterviewAgent</code> objects were created — one for conversation, one for feedback — causing the feedback report to generate on an empty history.</p>
             </div>
           </div>
           <div class="ch-right">
@@ -817,22 +944,56 @@
 
         <div class="challenge-card" data-delay="200">
           <div class="ch-left">
-            <div class="ch-tag" style="--clr: var(--purple)">SESSION</div>
-            <h3 class="ch-title">Session Isolation</h3>
+            <div class="ch-tag" style="--clr: var(--pink)">NEW</div>
+            <h3 class="ch-title">PostgreSQL Migration</h3>
             <div class="ch-problem">
               <span class="ch-label ch-problem-label">⚠ Problem</span>
-              <p>Without session clearing between runs, follow-up questions and scores would bleed across multiple interview sessions for the same user — contaminating history.</p>
+              <p>SQLite's single-writer lock blocked concurrent sessions and lacked the connection pooling needed for multi-user production loads.</p>
             </div>
           </div>
           <div class="ch-right">
             <div class="ch-solution">
               <span class="ch-label ch-solution-label">✓ Solution</span>
-              <p>Added a dedicated <code>/interview/start</code> endpoint that clears conversation history before each session. Every session is now independently scored.</p>
+              <p>Migrated to PostgreSQL via <code>asyncpg</code> driver with Alembic migrations. Added a <code>RESUMES</code> table and updated all foreign keys. Zero data loss via migration scripts.</p>
             </div>
           </div>
         </div>
 
         <div class="challenge-card" data-delay="300">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--cyan)">NEW</div>
+            <h3 class="ch-title">OAuth + Email Verification</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>Supporting both password-based and Google OAuth sign-in with a unified session model required handling two completely different identity flows.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>Added <code>oauth_provider</code> and <code>is_verified</code> columns to the USERS table. Email OTP on registration, Google callback on OAuth. Both paths issue the same JWT payload.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card" data-delay="400">
+          <div class="ch-left">
+            <div class="ch-tag" style="--clr: var(--purple)">NEW</div>
+            <h3 class="ch-title">Resume Context Injection</h3>
+            <div class="ch-problem">
+              <span class="ch-label ch-problem-label">⚠ Problem</span>
+              <p>Generic AI questions don't reflect a candidate's actual background. Uploading a PDF and injecting its content into every prompt introduced token-limit and latency concerns.</p>
+            </div>
+          </div>
+          <div class="ch-right">
+            <div class="ch-solution">
+              <span class="ch-label ch-solution-label">✓ Solution</span>
+              <p>PyMuPDF extracts resume text, LLaMA summarizes it to a compact skills JSON, stored in PostgreSQL. Only the JSON summary is injected into the interview system prompt — minimal tokens, maximum relevance.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card" data-delay="500">
           <div class="ch-left">
             <div class="ch-tag" style="--clr: var(--green)">PROMPT ENG.</div>
             <h3 class="ch-title">Strict AI Evaluation</h3>
@@ -852,7 +1013,130 @@
     </div>
   </section>
 
-  <!-- FOOTER — no brackets -->
+  <!-- RESOURCES / AI COACH -->
+  <section class="section" id="resources">
+    <div class="container">
+      <div class="section-label">07 — RESOURCES</div>
+      <h2 class="section-title">AI Interview Coach</h2>
+      <p class="section-sub">A dedicated coaching tab powered by the same LLaMA 3.1 model — ask anything, anytime.</p>
+
+      <div class="resources-layout">
+        <!-- Left: Coach description -->
+        <div class="resources-left">
+          <div class="coach-card">
+            <div class="coach-header">
+              <div class="coach-avatar">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="22" stroke="var(--cyan)" stroke-width="1.5"/>
+                  <circle cx="24" cy="18" r="7" stroke="var(--cyan)" stroke-width="1.5"/>
+                  <path d="M10 40c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="var(--cyan)" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="36" cy="12" r="6" fill="rgba(0,212,255,0.1)" stroke="var(--cyan)" stroke-width="1"/>
+                  <text x="36" y="16" text-anchor="middle" font-family="Space Mono" font-size="7" fill="var(--cyan)" font-weight="700">AI</text>
+                </svg>
+              </div>
+              <div class="coach-meta">
+                <div class="coach-name">Interview Coach</div>
+                <div class="coach-powered">Powered by LLaMA 3.1 via Groq</div>
+                <div class="coach-status"><span class="status-dot"></span> Always available</div>
+              </div>
+            </div>
+            <p class="coach-desc">
+              The Resources tab gives you a dedicated AI coach — separate from the interview simulation —
+              where you can ask for advice, practice answers, understand scoring rubrics, or get role-specific
+              preparation strategies at any point.
+            </p>
+            <div class="coach-capabilities">
+              <div class="cap-item"><span class="cap-icon" style="color:var(--cyan)">▸</span> Interview tips &amp; common mistakes</div>
+              <div class="cap-item"><span class="cap-icon" style="color:var(--green)">▸</span> Role-specific question banks (SWE, PM, Data)</div>
+              <div class="cap-item"><span class="cap-icon" style="color:var(--purple)">▸</span> Resume feedback &amp; phrasing help</div>
+              <div class="cap-item"><span class="cap-icon" style="color:var(--orange)">▸</span> Behavioural STAR method coaching</div>
+              <div class="cap-item"><span class="cap-icon" style="color:var(--pink)">▸</span> Technical concept explainers</div>
+              <div class="cap-item"><span class="cap-icon" style="color:var(--cyan)">▸</span> Negotiation &amp; offer evaluation</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mock chat UI -->
+        <div class="resources-right">
+          <div class="coach-chat-preview">
+            <div class="chat-header">
+              <div class="chat-header-dot"></div>
+              <span class="chat-header-title">Resources — Interview Coach</span>
+              <span class="chat-model-badge">LLaMA 3.1</span>
+            </div>
+            <div class="chat-messages">
+              <div class="chat-msg chat-msg-user">
+                <span class="msg-label">You</span>
+                <div class="msg-bubble msg-bubble-user">How do I answer "tell me about yourself" for a backend engineer role?</div>
+              </div>
+              <div class="chat-msg chat-msg-ai">
+                <span class="msg-label">Coach</span>
+                <div class="msg-bubble msg-bubble-ai">
+                  <p>Great question. For a backend role, structure it using the <span class="msg-highlight">Present → Past → Future</span> framework:</p>
+                  <p><strong>Present:</strong> State your current role &amp; main tech stack (FastAPI, Postgres, etc.)</p>
+                  <p><strong>Past:</strong> Mention 1-2 key projects with impact metrics</p>
+                  <p><strong>Future:</strong> Tie your goal to the role you're applying for</p>
+                  <p class="msg-tip">💡 Keep it under 90 seconds. Practice aloud using MockHire's voice mode.</p>
+                </div>
+              </div>
+              <div class="chat-msg chat-msg-user">
+                <span class="msg-label">You</span>
+                <div class="msg-bubble msg-bubble-user">What score should I aim for in communication?</div>
+              </div>
+              <div class="chat-msg chat-msg-ai">
+                <span class="msg-label">Coach</span>
+                <div class="msg-bubble msg-bubble-ai">
+                  <p>MockHire scores Communication on clarity, structure, and conciseness. Aim for <span class="msg-highlight">7+ / 10</span> as a target. Below 6 usually means answers are too vague or too long.</p>
+                </div>
+              </div>
+              <div class="chat-typing">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+              </div>
+            </div>
+            <div class="chat-input-row">
+              <div class="chat-input-mock">Ask the coach anything about interviews...</div>
+              <div class="chat-send-btn">
+                <svg viewBox="0 0 20 20" fill="none" width="16" height="16">
+                  <path d="M3 10l14-7-7 14V10H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Auth & new features callout -->
+          <div class="resources-auth-callout">
+            <div class="auth-item">
+              <div class="auth-icon" style="--clr: var(--green)">G</div>
+              <div class="auth-info">
+                <div class="auth-name">Google OAuth 2.0</div>
+                <div class="auth-desc">One-click sign-in with your Google account</div>
+              </div>
+            </div>
+            <div class="auth-divider"></div>
+            <div class="auth-item">
+              <div class="auth-icon" style="--clr: var(--cyan)">✉</div>
+              <div class="auth-info">
+                <div class="auth-name">Email Verification</div>
+                <div class="auth-desc">OTP sent on registration, required before first session</div>
+              </div>
+            </div>
+            <div class="auth-divider"></div>
+            <div class="auth-item">
+              <div class="auth-icon" style="--clr: var(--pink)">📄</div>
+              <div class="auth-info">
+                <div class="auth-name">Resume Upload</div>
+                <div class="auth-desc">Upload PDF · AI extracts skills · questions tailored to you</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-logo">
@@ -867,7 +1151,11 @@
         <span class="f-dot">·</span>
         <span class="f-tag">Groq API</span>
         <span class="f-dot">·</span>
-        <span class="f-tag">SQLite</span>
+        <span class="f-tag f-tag-new">PostgreSQL</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag f-tag-new">OAuth 2.0</span>
+        <span class="f-dot">·</span>
+        <span class="f-tag f-tag-new">Resume Upload</span>
         <span class="f-dot">·</span>
         <span class="f-tag">JWT</span>
         <span class="f-dot">·</span>
